@@ -22,5 +22,5 @@ docker-compose down
 
 Running Django's manage.py (make sure the Django container is running, otherwise this won't work)
 ```bash
-docker-compose exec -T app python manage.py <insert your arguments here>
+docker-compose exec app python manage.py <insert your arguments here>
 ```
