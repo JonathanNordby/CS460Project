@@ -1,9 +1,9 @@
 from django.contrib import admin
 from .models import Project
 
-class TodoAdmin(admin.ModelAdmin):
+class ProjectAdmin(admin.ModelAdmin):
     list_display = ('title', 'description', 'completed')
 
 # Register your models here.
 
-admin.site.register(Project, TodoAdmin)
+admin.site.register(Project, ProjectAdmin)

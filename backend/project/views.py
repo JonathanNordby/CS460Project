@@ -6,9 +6,6 @@ from .models import Project
 
 # Create your views here.
 
-def index(request):
-	return HttpResponse("Test Request: Please Ignore")
-
 class ProjectView(viewsets.ModelViewSet):
     serializer_class = ProjectSerializer
     queryset = Project.objects.all()
