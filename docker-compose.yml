@@ -1,5 +1,17 @@
 version: "3"
 services:
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    container_name: React
+    depends_on:
+      - backend
+    ports:
+      - "8000:3000"
+    environment:
+      CHOKIDAR_USEPOLLING: "true"
+      REACT_APP_PROXY_HOST: "http://backend:8000"
   backend:
     build:
       context: ./backend
@@ -7,8 +19,6 @@ services:
     container_name: Django
     depends_on:
       - db
-    ports:
-      - "8000:8000"
     restart: unless-stopped
     environment:
       # Django settings
@@ -18,6 +28,8 @@ services:
       MYSQL_HOST: "db"
       MYSQL_PORT: "3306"
       MYSQL_DATABASE: "django"
+      CORS_ORIGIN_WHITELIST: "http://localhost:8000"
+      ALLOWED_HOSTS: "backend"
   db:
     image: mysql:5.7
     container_name: MySQL
