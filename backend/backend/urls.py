@@ -7,6 +7,6 @@ router = routers.DefaultRouter()
 router.register(r'project', views.ProjectView, 'project')
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
+    path('api/admin/', admin.site.urls),
     path('api/', include(router.urls)),
 ]
