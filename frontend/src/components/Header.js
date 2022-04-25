@@ -25,8 +25,8 @@ const Header = () => {
                 </li>
                 </ul>
                 <div className="items-center flex-shrink-0 hidden lg:flex">
-                <button className="text-white self-center px-8 py-3 rounded">Sign in</button>
-                <button className="self-center px-8 py-3 font-semibold rounded bg-gradient-to-br from-emerald-600 to-blue-700 text-black">Sign up</button>
+                <NavLink to="/sign_in"><button className="text-white self-center px-8 py-3 rounded">Sign in</button></NavLink>
+                <NavLink to="/sign_up"><button className="self-center px-8 py-3 font-semibold rounded bg-gradient-to-br from-emerald-600 to-blue-700 text-black">Sign up</button></NavLink>
                 </div>
                 <button className="p-4 lg:hidden">
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" className="w-6 h-6 text-coolGray-100">

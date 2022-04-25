@@ -40,7 +40,7 @@ const Table = (props) => {
             {isLoading ? (
                 <p>Loading ...</p>
             ) : (
-                <div className="container p-2 mx-auto sm:p-4 dark:text-coolGray-100">
+                <div className="container p-2 mx-auto sm:p-4 dark:text-neutral-100">
                     <h2 className="mb-4 text-2xl font-semibold leading-tight text-white">Instructors</h2>
                     <div className="overflow-x-auto">
                         <table className="min-w-full text-xs">

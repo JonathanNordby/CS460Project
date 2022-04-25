@@ -10,6 +10,8 @@ import reportWebVitals from './reportWebVitals';
 import Courses from './routes/courses';
 import Students from './routes/students';
 import Instructors from './routes/instructors';
+import SignIn from './routes/SignUp';
+import SignUp from './routes/SignIn';
 
 const container = document.getElementById('root');
 const root = createRoot(container);
@@ -21,6 +23,8 @@ root.render(
       <Route path="courses" element={<Courses />} />
       <Route path="students" element={<Students />} />
       <Route path="instructors" element={<Instructors />} />
+      <Route path="sign_in" element={<SignIn />} />
+      <Route path="sign_up" element={<SignUp />} />
     </Routes>
   </BrowserRouter>
 );
