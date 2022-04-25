@@ -1,6 +1,5 @@
 from rest_framework import serializers
 from .models import (
-    Project,
     Course,
     Department,
     Instructor,
@@ -10,11 +9,6 @@ from .models import (
     Takes,
     Teaches,
 )
-
-class ProjectSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = Project
-        fields = ('id', 'title', 'description', 'completed')
 
 class CourseSerializer(serializers.ModelSerializer):
     class Meta:

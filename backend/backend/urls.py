@@ -4,7 +4,6 @@ from rest_framework import routers
 from project import views
 
 router = routers.DefaultRouter()
-router.register(r'project', views.ProjectView, 'project')
 router.register(r'course', views.CourseView, 'course')
 router.register(r'department', views.DepartmentView, 'department')
 router.register(r'instructor', views.InstructorView, 'instructor')
