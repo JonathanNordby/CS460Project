@@ -131,8 +131,6 @@ STATIC_URL = 'api/static/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-ALLOWED_HOSTS = [os.getenv('ALLOWED_HOSTS')]
-
-CORS_ORIGIN_WHITELIST = [
-    os.getenv('CORS_ORIGIN_WHITELIST')
-]
+ALLOWED_HOSTS = os.getenv('ALLOWED_HOSTS').split(',')
+CORS_ORIGIN_WHITELIST = os.getenv('CORS_ORIGIN_WHITELIST').split(',')
+CSRF_TRUSTED_ORIGINS = os.getenv('CSRF_TRUSTED_ORIGINS').split(',')

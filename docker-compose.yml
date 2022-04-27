@@ -30,6 +30,7 @@ services:
       MYSQL_DATABASE: "django"
       CORS_ORIGIN_WHITELIST: "http://localhost:3000"
       ALLOWED_HOSTS: "backend"
+      CSRF_TRUSTED_ORIGINS: "http://localhost:3000"
   db:
     image: mysql:5.7
     container_name: MySQL
