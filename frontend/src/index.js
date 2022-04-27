@@ -10,8 +10,8 @@ import reportWebVitals from './reportWebVitals';
 import Courses from './routes/courses';
 import Students from './routes/students';
 import Instructors from './routes/instructors';
-import SignIn from './routes/SignUp';
-import SignUp from './routes/SignIn';
+import SignIn from './routes/SignIn';
+import SignUp from './routes/SignUp';
 
 const container = document.getElementById('root');
 const root = createRoot(container);
