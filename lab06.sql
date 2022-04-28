@@ -267,3 +267,9 @@ WHERE teaches.ID = instructor.ID AND teaches.year = 2019 AND semester = 1;
 SELECT DISTINCT name
 FROM student, takes, teaches
 WHERE student.ID = takes.ID AND takes.sec_ID = teaches.sec_ID AND teaches.ID = 07101;
+
+CREATE VIEW func2 AS
+SELECT dept_name, min_salary, max_salary, avg_salary
+FROM ( SELECT dept_name, AVG(salary), MIN(salary), MAX(salary)
+	FROM instructor
+	GROUP BY dept_name); 
