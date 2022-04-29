@@ -10,7 +10,7 @@ export default function instructors() {
 
   return (
     <Layout>
-      <Table endpoint="instructor" columns={columns} />
+      <Table tableName="Instructors" endpoint="instructor" columns={columns} MinMaxAvg="salary" />
     </Layout>
   )
 }

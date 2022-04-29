@@ -10,7 +10,7 @@ export default function courses() {
 
   return (
     <Layout>
-      <Table endpoint="course" columns={columns} />
+      <Table tableName="Courses" endpoint="course" columns={columns} />
     </Layout>
   )
 }

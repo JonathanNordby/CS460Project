@@ -10,7 +10,7 @@ export default function students() {
 
   return (
     <Layout>
-      <Table endpoint="student" columns={columns} />
+      <Table tableName="Students" endpoint="student" columns={columns} />
     </Layout>
   )
 }

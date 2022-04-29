@@ -45,7 +45,7 @@ export default function SignUp() {
 					<form novalidate="" action="" className="space-y-12 ng-untouched ng-pristine ng-valid" data-bitwarden-watching="1" onSubmit={onSubmit}>
 						<div className="space-y-4">
 							<div>
-								<label for="email" className="block mb-2 text-sm">Email address</label>
+								<label for="username" className="block mb-2 text-sm">Username</label>
 								<input type={"username"} onChange={(e)=>setFormData({...formData, username: e.target.value})} name="username" id="username" placeholder="DaqingIsCoolz99" className="w-full px-3 py-2 border rounded-md border-neutral-700 bg-neutral-900 text-neutral-100" />
 							</div>
 							<div>
