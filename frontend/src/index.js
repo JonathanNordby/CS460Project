@@ -7,6 +7,7 @@ import {
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import F6 from './routes/f6';
 import F3 from './routes/f3';
 import F1F2 from './routes/f1_f2';
 import SignIn from './routes/SignIn';
@@ -23,6 +24,7 @@ root.render(
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<App />} />
+        <Route path="f6" element={<F6 />} />
         <Route path="f3" element={<F3 />} />
         <Route path="f1_f2" element={<F1F2 />} />
         <Route path="sign_in" element={<SignIn />} />

@@ -1,5 +1,5 @@
 import Layout from '../templates/Layout';
-import F1F2Table from '../components/F1F2Table';
+import F1F2F6Table from '../components/F1F2F6Table';
 
 export default function f1_f2() {
   const columns = [
@@ -10,7 +10,7 @@ export default function f1_f2() {
 
   return (
     <Layout>
-      <F1F2Table tableName="F1 & F2" endpoint="instructor" columns={columns} MinMaxAvg="salary" />
+      <F1F2F6Table tableName="F1 & F2" endpoint="instructor" columns={columns} MinMaxAvg="salary" />
     </Layout>
   )
 }
