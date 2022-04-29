@@ -251,3 +251,22 @@ class Func3S20(models.Model):
     class Meta:
         managed = False  # Created from a view. Don't remove.
         db_table = 'func3s20'
+
+class Func4F(models.Model):
+    course_id = models.CharField(max_length=8, db_collation='latin1_swedish_ci', primary_key=True)
+    sec_id = models.CharField(max_length=3, db_collation='latin1_swedish_ci')
+    sectionedstudents = models.BigIntegerField(db_column='sectionedStudents', blank=True, null=True)  # Field name made lowercase.
+
+    class Meta:
+        managed = False  # Created from a view. Don't remove.
+        db_table = 'func4f'
+
+
+class Func4S(models.Model):
+    course_id = models.CharField(max_length=8, db_collation='latin1_swedish_ci', primary_key=True)
+    sec_id = models.CharField(max_length=3, db_collation='latin1_swedish_ci')
+    sectionedstudents = models.BigIntegerField(db_column='sectionedStudents', blank=True, null=True)  # Field name made lowercase.
+
+    class Meta:
+        managed = False  # Created from a view. Don't remove.
+        db_table = 'func4s'

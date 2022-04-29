@@ -14,6 +14,8 @@ from .serializers import (
     Func3F20Serializer,
     Func3S19Serializer,
     Func3S20Serializer,
+    Func4FSerializer,
+    Func4SSerializer,
 )
 from .models import (
     Course,
@@ -28,6 +30,8 @@ from .models import (
     Func3F20,
     Func3S19,
     Func3S20,
+    Func4F,
+    Func4S,
 )
 
 # Create your views here.
@@ -79,3 +83,11 @@ class Func3S19View(viewsets.ModelViewSet):
 class Func3S20View(viewsets.ModelViewSet):
     serializer_class = Func3S20Serializer
     queryset = Func3S20.objects.all()
+
+class Func4FView(viewsets.ModelViewSet):
+    serializer_class = Func4FSerializer
+    queryset = Func4F.objects.all()
+
+class Func4SView(viewsets.ModelViewSet):
+    serializer_class = Func4SSerializer
+    queryset = Func4S.objects.all()
