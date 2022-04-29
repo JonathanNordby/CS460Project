@@ -4,7 +4,7 @@ import TableBody from "./TableBody";
 import TableHead from "./TableHead";
 import MinMaxAvg from "./MinMaxAvg";
 
-const Table = (props) => {
+const F1F2Table = (props) => {
     const [origTableData, setOrigTableData] = useState([]);
     const [tableData, setTableData] = useState([]);
     const [isLoading, setIsLoading] = useState(false);
@@ -74,4 +74,4 @@ const Table = (props) => {
     );
 };
 
-export default Table;
+export default F1F2Table;

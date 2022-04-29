@@ -212,3 +212,42 @@ class Teaches(models.Model):
     class Meta:
         managed = False
         db_table = 'teaches'
+
+class Func3F19(models.Model):
+    name = models.CharField(max_length=20, db_collation='latin1_swedish_ci', blank=True, primary_key=True)
+    dept_name = models.CharField(max_length=25, db_collation='latin1_swedish_ci', blank=True, null=True)
+    studentcount = models.BigIntegerField(db_column='StudentCount', blank=True, null=True)  # Field name made lowercase.
+
+    class Meta:
+        managed = False  # Created from a view. Don't remove.
+        db_table = 'func3f19'
+
+
+class Func3F20(models.Model):
+    name = models.CharField(max_length=20, db_collation='latin1_swedish_ci', blank=True, primary_key=True)
+    dept_name = models.CharField(max_length=25, db_collation='latin1_swedish_ci', blank=True, null=True)
+    studentcount = models.BigIntegerField(db_column='StudentCount', blank=True, null=True)  # Field name made lowercase.
+
+    class Meta:
+        managed = False  # Created from a view. Don't remove.
+        db_table = 'func3f20'
+
+
+class Func3S19(models.Model):
+    name = models.CharField(max_length=20, db_collation='latin1_swedish_ci', blank=True, primary_key=True)
+    dept_name = models.CharField(max_length=25, db_collation='latin1_swedish_ci', blank=True, null=True)
+    studentcount = models.BigIntegerField(db_column='StudentCount', blank=True, null=True)  # Field name made lowercase.
+
+    class Meta:
+        managed = False  # Created from a view. Don't remove.
+        db_table = 'func3s19'
+
+
+class Func3S20(models.Model):
+    name = models.CharField(max_length=20, db_collation='latin1_swedish_ci', blank=True, primary_key=True)
+    dept_name = models.CharField(max_length=25, db_collation='latin1_swedish_ci', blank=True, null=True)
+    studentcount = models.BigIntegerField(db_column='StudentCount', blank=True, null=True)  # Field name made lowercase.
+
+    class Meta:
+        managed = False  # Created from a view. Don't remove.
+        db_table = 'func3s20'

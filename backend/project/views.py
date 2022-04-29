@@ -10,6 +10,10 @@ from .serializers import (
     StudentSerializer,
     TakesSerializer,
     TeachesSerializer,
+    Func3F19Serializer,
+    Func3F20Serializer,
+    Func3S19Serializer,
+    Func3S20Serializer,
 )
 from .models import (
     Course,
@@ -20,6 +24,10 @@ from .models import (
     Student,
     Takes,
     Teaches,
+    Func3F19,
+    Func3F20,
+    Func3S19,
+    Func3S20,
 )
 
 # Create your views here.
@@ -55,3 +63,19 @@ class TakesView(viewsets.ModelViewSet):
 class TeachesView(viewsets.ModelViewSet):
     serializer_class = TeachesSerializer
     queryset = Teaches.objects.all()
+
+class Func3F19View(viewsets.ModelViewSet):
+    serializer_class = Func3F19Serializer
+    queryset = Func3F19.objects.all()
+
+class Func3F20View(viewsets.ModelViewSet):
+    serializer_class = Func3F20Serializer
+    queryset = Func3F20.objects.all()
+
+class Func3S19View(viewsets.ModelViewSet):
+    serializer_class = Func3S19Serializer
+    queryset = Func3S19.objects.all()
+
+class Func3S20View(viewsets.ModelViewSet):
+    serializer_class = Func3S20Serializer
+    queryset = Func3S20.objects.all()

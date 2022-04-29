@@ -1,7 +1,7 @@
 import Layout from '../templates/Layout';
-import Table from '../components/Table';
+import F1F2Table from '../components/F1F2Table';
 
-export default function instructors() {
+export default function f1_f2() {
   const columns = [
     { label: "Full Name", accessor: "name", sortable: true },
     { label: "Department Name", accessor: "dept_name", sortable: true },
@@ -10,7 +10,7 @@ export default function instructors() {
 
   return (
     <Layout>
-      <Table tableName="Instructors" endpoint="instructor" columns={columns} MinMaxAvg="salary" />
+      <F1F2Table tableName="F1 & F2" endpoint="instructor" columns={columns} MinMaxAvg="salary" />
     </Layout>
   )
 }

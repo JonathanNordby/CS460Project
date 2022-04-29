@@ -16,6 +16,10 @@ router.register(r'section', views.SectionView, 'section')
 router.register(r'student', views.StudentView, 'student')
 router.register(r'takes', views.TakesView, 'takes')
 router.register(r'teaches', views.TeachesView, 'teaches')
+router.register(r'func3f19', views.Func3F19View, 'func3f19')
+router.register(r'func3f20', views.Func3F20View, 'func3f20')
+router.register(r'func3s19', views.Func3S19View, 'func3s19')
+router.register(r'func3s20', views.Func3S20View, 'func3s20')
 
 urlpatterns = [
     path('api/token/', TokenObtainPairView.as_view(), name='token_obtain_pair'),

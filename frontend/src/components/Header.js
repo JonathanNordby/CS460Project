@@ -18,10 +18,10 @@ const Header = () => {
                     <NavLink to="/" className={(navData) => navData.isActive ? "flex items-center px-4 -mb-1 border-b-2 border-transparent text-emerald-600 border-emerald-600" : "text-white flex items-center px-4 -mb-1 border-b-2 border-transparent" }>Home</NavLink>
                 </li>
                 <li className="flex">
-                    <NavLink to="/instructors" className={(navData) => navData.isActive ? "flex items-center px-4 -mb-1 border-b-2 border-transparent text-emerald-600 border-emerald-600" : "text-white flex items-center px-4 -mb-1 border-b-2 border-transparent" }>Instructors</NavLink>
+                    <NavLink to="/f1_f2" className={(navData) => navData.isActive ? "flex items-center px-4 -mb-1 border-b-2 border-transparent text-emerald-600 border-emerald-600" : "text-white flex items-center px-4 -mb-1 border-b-2 border-transparent" }>F1 & F2</NavLink>
                 </li>
                 <li className="flex">
-                    <NavLink to="/students" className={(navData) => navData.isActive ? "flex items-center px-4 -mb-1 border-b-2 border-transparent text-emerald-600 border-emerald-600" : "text-white flex items-center px-4 -mb-1 border-b-2 border-transparent" }>Students</NavLink>
+                    <NavLink to="/f3" className={(navData) => navData.isActive ? "flex items-center px-4 -mb-1 border-b-2 border-transparent text-emerald-600 border-emerald-600" : "text-white flex items-center px-4 -mb-1 border-b-2 border-transparent" }>F3</NavLink>
                 </li>
                 <li className="flex">
                     <NavLink to="/courses" className={(navData) => navData.isActive ? "flex items-center px-4 -mb-1 border-b-2 border-transparent text-emerald-600 border-emerald-600" : "text-white flex items-center px-4 -mb-1 border-b-2 border-transparent" }>Courses</NavLink>

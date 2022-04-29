@@ -7,9 +7,8 @@ import {
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import Courses from './routes/courses';
-import Students from './routes/students';
-import Instructors from './routes/instructors';
+import F3 from './routes/f3';
+import F1F2 from './routes/f1_f2';
 import SignIn from './routes/SignIn';
 import { AuthProvider } from 'react-auth-kit'
 
@@ -24,9 +23,8 @@ root.render(
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<App />} />
-        <Route path="courses" element={<Courses />} />
-        <Route path="students" element={<Students />} />
-        <Route path="instructors" element={<Instructors />} />
+        <Route path="f3" element={<F3 />} />
+        <Route path="f1_f2" element={<F1F2 />} />
         <Route path="sign_in" element={<SignIn />} />
       </Routes>
     </BrowserRouter>

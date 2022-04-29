@@ -8,6 +8,10 @@ from .models import (
     Student,
     Takes,
     Teaches,
+    Func3F19,
+    Func3F20,
+    Func3S19,
+    Func3S20,
 )
 
 class CourseSerializer(serializers.ModelSerializer):
@@ -49,3 +53,23 @@ class TeachesSerializer(serializers.ModelSerializer):
     class Meta:
         model = Teaches
         fields = ('course', 'sec', 'semester', 'year', 'dbid')
+
+class Func3F19Serializer(serializers.ModelSerializer):
+    class Meta:
+        model = Func3F19
+        fields = ('name', 'dept_name', 'studentcount')
+
+class Func3F20Serializer(serializers.ModelSerializer):
+    class Meta:
+        model = Func3F20
+        fields = ('name', 'dept_name', 'studentcount')
+
+class Func3S19Serializer(serializers.ModelSerializer):
+    class Meta:
+        model = Func3S19
+        fields = ('name', 'dept_name', 'studentcount')
+
+class Func3S20Serializer(serializers.ModelSerializer):
+    class Meta:
+        model = Func3S20
+        fields = ('name', 'dept_name', 'studentcount')
