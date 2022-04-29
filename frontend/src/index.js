@@ -10,6 +10,7 @@ import reportWebVitals from './reportWebVitals';
 import F1F2 from './routes/f1_f2';
 import F3 from './routes/f3';
 import F4 from './routes/f4';
+import F5 from './routes/f5';
 import F6 from './routes/f6';
 import SignIn from './routes/SignIn';
 import { AuthProvider } from 'react-auth-kit'
@@ -28,6 +29,7 @@ root.render(
         <Route path="f1_f2" element={<F1F2 />} />
         <Route path="f3" element={<F3 />} />
         <Route path="f4" element={<F4 />} />
+        <Route path="f5" element={<F5 />} />
         <Route path="f6" element={<F6 />} />
         <Route path="sign_in" element={<SignIn />} />
       </Routes>

@@ -22,6 +22,7 @@ router.register(r'func3s19', views.Func3S19View, 'func3s19')
 router.register(r'func3s20', views.Func3S20View, 'func3s20')
 router.register(r'func4f', views.Func4FView, 'func4f')
 router.register(r'func4s', views.Func4SView, 'func4s')
+router.register(r'func5', views.Func5View, 'func5')
 
 urlpatterns = [
     path('api/token/', TokenObtainPairView.as_view(), name='token_obtain_pair'),

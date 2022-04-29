@@ -270,3 +270,11 @@ class Func4S(models.Model):
     class Meta:
         managed = False  # Created from a view. Don't remove.
         db_table = 'func4s'
+
+class Func5(models.Model):
+    concat_course_id_sec_id_field = models.CharField(db_column="CONCAT(course_id, '-', sec_id)", max_length=12, db_collation='latin1_swedish_ci', blank=True, primary_key=True)  # Field name made lowercase. Field renamed to remove unsuitable characters. Field renamed because it ended with '_'.  
+    name = models.CharField(max_length=32, db_collation='latin1_swedish_ci', blank=True, null=True)
+
+    class Meta:
+        managed = False  # Created from a view. Don't remove.
+        db_table = 'func5'

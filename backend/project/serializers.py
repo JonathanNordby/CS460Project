@@ -14,6 +14,7 @@ from .models import (
     Func3S20,
     Func4F,
     Func4S,
+    Func5,
 )
 
 class CourseSerializer(serializers.ModelSerializer):
@@ -85,3 +86,8 @@ class Func4SSerializer(serializers.ModelSerializer):
     class Meta:
         model = Func4S
         fields = ('course_id', 'sec_id', 'sectionedstudents')
+
+class Func5Serializer(serializers.ModelSerializer):
+    class Meta:
+        model = Func5
+        fields = ('concat_course_id_sec_id_field', 'name')

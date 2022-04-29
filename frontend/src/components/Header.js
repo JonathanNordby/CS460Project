@@ -27,6 +27,9 @@ const Header = () => {
                     <NavLink to="/f4" className={(navData) => navData.isActive ? "flex items-center px-4 -mb-1 border-b-2 border-transparent text-emerald-600 border-emerald-600" : "text-white flex items-center px-4 -mb-1 border-b-2 border-transparent" }>F4</NavLink>
                 </li>
                 <li className="flex">
+                    <NavLink to="/f5" className={(navData) => navData.isActive ? "flex items-center px-4 -mb-1 border-b-2 border-transparent text-emerald-600 border-emerald-600" : "text-white flex items-center px-4 -mb-1 border-b-2 border-transparent" }>F5</NavLink>
+                </li>
+                <li className="flex">
                     <NavLink to="/f6" className={(navData) => navData.isActive ? "flex items-center px-4 -mb-1 border-b-2 border-transparent text-emerald-600 border-emerald-600" : "text-white flex items-center px-4 -mb-1 border-b-2 border-transparent" }>F6</NavLink>
                 </li>
                 </ul>
