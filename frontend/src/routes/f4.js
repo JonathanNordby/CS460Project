@@ -10,6 +10,7 @@ export default function F3() {
 
   return (
     <Layout>
+      <p className="text-white text-center my-4">F4. Create the list of course sections and the number of students enrolled in each section that the professor taught in a given semester</p>
       <F4Table tableName="F4" columns={columns} />
     </Layout>
   )

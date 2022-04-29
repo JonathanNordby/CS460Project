@@ -11,6 +11,7 @@ export default function F6() {
 
   return (
     <Layout>
+      <p className="text-white text-center my-4">F6. Query the list of course sections offered by dept in a given semester and year</p>
       <F1F2F6Table tableName="F6" endpoint="course" columns={columns} />
     </Layout>
   )

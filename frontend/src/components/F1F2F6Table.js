@@ -10,7 +10,7 @@ const F1F2F6Table = (props) => {
     const [isLoading, setIsLoading] = useState(false);
 
     useEffect(() => {
-        const fetchData = async() => {
+        const fetchData = async () => {
             setIsLoading(true);
             const response = await fetch("/api/" + props.endpoint + "/");
             const json = await response.json();
@@ -46,45 +46,32 @@ const F1F2F6Table = (props) => {
 
     const minMaxAvgs = (typeof props.MinMaxAvg !== 'undefined' && props.MinMaxAvg) ? props.MinMaxAvg.split(",") : [];
 
-    return ( <
-        React.Fragment > {
-            isLoading ? ( <
-                p > Loading... < /p>
-            ) : ( <
-                div className = "container p-2 mx-auto sm:p-4 dark:text-neutral-100" >
-                <
-                h2 className = "mb-4 text-2xl font-semibold leading-tight text-white" > { props.tableName } < /h2>
-                Department: < select onChange = { handleFiltering }
-                class = "form-select appearance-none block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding bg-no-repeat border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none" > {
-                    depts.map((dept) => {
-                        return <option value = { dept } > { dept } < /option>;
-                    })
-                } <
-                /select> <
-                br / >
-                <
-                div className = "overflow-x-auto" >
-                <
-                table className = "min-w-full text-xs" >
-                <
-                TableHead columns = { props.columns }
-                handleSorting = { handleSorting }
-                /> <
-                TableBody columns = { props.columns }
-                tableData = { tableData }
-                /> <
-                /table> <
-                /div> {
-                    minMaxAvgs.map((minMaxAvg) => {
-                        return <MinMaxAvg data = { tableData }
-                        column = { minMaxAvg }
-                        />;
-                    })
-                } <
-                /div>
-            )
-        } <
-        /React.Fragment>
+    return (
+        <React.Fragment>
+            {isLoading ? (
+                <p>Loading ...</p>
+            ) : (
+                <div className="container p-2 mx-auto sm:p-4 dark:text-neutral-100">
+                    <h2 className="mb-4 text-2xl font-semibold leading-tight text-white">{props.tableName}</h2>
+                    Department: <select onChange={handleFiltering} class="form-select appearance-none block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding bg-no-repeat border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none">
+                        {depts.map((dept) => {
+                            return <option value={dept}>{dept}</option>;
+                        })}
+                    </select>
+                    <br />
+                    {minMaxAvgs.map((minMaxAvg) => {
+                        return <MinMaxAvg data={tableData} column={minMaxAvg} />;
+                    })}
+                    <br />
+                    <div className="overflow-x-auto">
+                        <table className="min-w-full text-xs">
+                            <TableHead columns={props.columns} handleSorting={handleSorting} />
+                            <TableBody columns={props.columns} tableData={tableData} />
+                        </table>
+                    </div>
+                </div>
+            )}
+        </React.Fragment>
     );
 };
 

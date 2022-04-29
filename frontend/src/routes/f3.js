@@ -10,6 +10,7 @@ export default function F3() {
 
   return (
     <Layout>
+      <p className="text-white text-center my-4">F3. Create a table of professor name, dept, and total number of students taught by the professor in a given semester</p>
       <F3Table tableName="F3" columns={columns} />
     </Layout>
   )
