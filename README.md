@@ -41,7 +41,7 @@ docker-compose up -d db
 
 Then, load the demo database into the MySQL server
 ```bash
-docker-compose exec db sh -c 'exec mysql -uroot -p"root"' < database.sql
+docker-compose exec -T db sh -c 'exec mysql -uroot -p"root"' < database.sql
 ```
 
 Then, bring up the other necessary containers
