@@ -1,4 +1,5 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react"
+import { withAuthHeader } from 'react-auth-kit'
 
 import TableBody from "./TableBody";
 import TableHead from "./TableHead";
@@ -10,16 +11,26 @@ const F1F2F6Table = (props) => {
     const [isLoading, setIsLoading] = useState(false);
 
     useEffect(() => {
-        const fetchData = async () => {
-            setIsLoading(true);
-            const response = await fetch("/api/" + props.endpoint + "/");
-            const json = await response.json();
-            setOrigTableData(json);
-            setTableData(json);
-            setIsLoading(false);
-        };
-        fetchData();
-    }, [props.endpoint, setTableData]);
+        if (props.authHeader == null || props.authHeader === "" || typeof props.authHeader === 'undefined') {
+            alert("You must be logged in to view this page.")
+            window.location.href = "/sign_in"
+        } else {
+            const fetchData = async () => {
+                setIsLoading(true);
+                const response = await fetch("/api/" + props.endpoint + "/", { headers: {'Authorization': props.authHeader } });
+                if (response.status !== 200) {
+                    alert("You do not have access to view this page.")
+                    window.location.href = "/"
+                } else {
+                    const json = await response.json();
+                    setOrigTableData(json);
+                    setTableData(json);
+                    setIsLoading(false);
+                }
+            };
+            fetchData();
+        }
+    }, [props.endpoint, setTableData, props.authHeader]);
 
     const depts = [...new Set(origTableData.map(item => item.dept_name))].sort();
 
@@ -53,14 +64,14 @@ const F1F2F6Table = (props) => {
             ) : (
                 <div className="container p-2 mx-auto sm:p-4 dark:text-neutral-100">
                     <h2 className="mb-4 text-2xl font-semibold leading-tight text-white">{props.tableName}</h2>
-                    Department: <select onChange={handleFiltering} class="form-select appearance-none block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding bg-no-repeat border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none">
+                    Department: <select onChange={handleFiltering} className="form-select appearance-none block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding bg-no-repeat border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none">
                         {depts.map((dept) => {
-                            return <option value={dept}>{dept}</option>;
+                            return <option value={dept} key={dept}>{dept}</option>;
                         })}
                     </select>
                     <br />
                     {minMaxAvgs.map((minMaxAvg) => {
-                        return <MinMaxAvg data={tableData} column={minMaxAvg} />;
+                        return <MinMaxAvg data={tableData} column={minMaxAvg} key={minMaxAvg} />;
                     })}
                     <br />
                     <div className="overflow-x-auto">
@@ -75,4 +86,4 @@ const F1F2F6Table = (props) => {
     );
 };
 
-export default F1F2F6Table;
+export default withAuthHeader(F1F2F6Table);

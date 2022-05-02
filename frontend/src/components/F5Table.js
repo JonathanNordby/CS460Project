@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { withAuthHeader } from 'react-auth-kit'
 
 import TableBody from "./TableBody";
 import TableHead from "./TableHead";
@@ -9,16 +10,26 @@ const F5Table = (props) => {
     const [isLoading, setIsLoading] = useState(false);
 
     useEffect(() => {
-        const fetchData = async () => {
-            setIsLoading(true);
-            const response = await fetch("/api/func5/");
-            const json = await response.json();
-            setOrigTableData(json);
-            setTableData(json);
-            setIsLoading(false);
-        };
-        fetchData();
-    }, [setTableData]);
+        if (props.authHeader == null || props.authHeader === "" || typeof props.authHeader === 'undefined') {
+            alert("You must be logged in to view this page.")
+            window.location.href = "/sign_in"
+        } else {
+            const fetchData = async () => {
+                setIsLoading(true);
+                const response = await fetch("/api/func5/", { headers: {'Authorization': props.authHeader } });
+                if (response.status !== 200) {
+                    alert("You do not have access to view this page.")
+                    window.location.href = "/"
+                } else {
+                    const json = await response.json();
+                    setOrigTableData(json);
+                    setTableData(json);
+                    setIsLoading(false);
+                }
+            };
+            fetchData();
+        }
+    }, [setTableData, props.authHeader]);
 
     const sections = [...new Set(origTableData.map(item => item.concat_course_id_sec_id_field))].sort();
 
@@ -50,7 +61,7 @@ const F5Table = (props) => {
             ) : (
                 <div className="container p-2 mx-auto sm:p-4 dark:text-neutral-100">
                     <h2 className="mb-4 text-2xl font-semibold leading-tight text-white">{props.tableName}</h2>
-                    Section: <select onChange={handleFiltering} class="form-select appearance-none block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding bg-no-repeat border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none">
+                    Section: <select onChange={handleFiltering} className="form-select appearance-none block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding bg-no-repeat border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none">
                         {sections.map((section) => {
                             return <option value={section}>{section}</option>;
                         })}
@@ -68,4 +79,4 @@ const F5Table = (props) => {
     );
 };
 
-export default F5Table;
+export default withAuthHeader(F5Table);

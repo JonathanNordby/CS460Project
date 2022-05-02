@@ -1,10 +1,9 @@
 import React from "react";
 import { Link, NavLink } from "react-router-dom";
-import { useSignOut } from 'react-auth-kit'
+
+import AuthButton from './AuthButton'
 
 const Header = () => {
-    const signOut = useSignOut()
-
     return (
         <header className="p-4 bg-neutral-800 text-neutral-100">
             <div className="container flex justify-between h-16 mx-auto">
@@ -34,8 +33,7 @@ const Header = () => {
                 </li>
                 </ul>
                 <div className="items-center flex-shrink-0 hidden lg:flex">
-                    <button className="text-white self-center px-8 py-3 rounded" onClick={() => signOut()}>Log out</button>
-                    <NavLink to="/sign_in"><button className="self-center px-8 py-3 font-semibold rounded bg-gradient-to-br from-emerald-600 to-blue-700 text-black">Sign in</button></NavLink>
+                    <AuthButton />
                 </div>
                 <button className="p-4 lg:hidden">
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" className="w-6 h-6 text-neutral-100">

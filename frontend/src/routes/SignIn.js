@@ -1,5 +1,5 @@
-import React from 'react';
-import Layout from '../templates/Layout';
+import React from 'react'
+import Layout from '../templates/Layout'
 import { useSignIn } from 'react-auth-kit'
 
 export default function SignUp() {
@@ -19,9 +19,10 @@ export default function SignUp() {
             if(res.status === 200){
 				const json = await res.json();
 				if(signIn({
-					tokenType: "Bearer",
+					tokenType: 'Bearer',
 					token: json.access,
-					refreshToken: json.refresh
+					authState: {'username': formData.username},
+					expiresIn: 60 * 24
 				})) {
 					window.location.href = '/'
 				} else {
@@ -42,15 +43,15 @@ export default function SignUp() {
 						<h1 className="my-3 text-4xl font-bold">Sign in</h1>
 						<p className="text-sm text-neutral-400">Sign in to access your account</p>
 					</div>
-					<form novalidate="" action="" className="space-y-12 ng-untouched ng-pristine ng-valid" data-bitwarden-watching="1" onSubmit={onSubmit}>
+					<form noValidate="" action="" className="space-y-12 ng-untouched ng-pristine ng-valid" data-bitwarden-watching="1" onSubmit={onSubmit}>
 						<div className="space-y-4">
 							<div>
-								<label for="username" className="block mb-2 text-sm">Username</label>
-								<input type={"username"} onChange={(e)=>setFormData({...formData, username: e.target.value})} name="username" id="username" placeholder="DaqingIsCoolz99" className="w-full px-3 py-2 border rounded-md border-neutral-700 bg-neutral-900 text-neutral-100" />
+								<label htmlFor="username" className="block mb-2 text-sm">Username</label>
+								<input type={"username"} onChange={(e)=>setFormData({...formData, username: e.target.value})} name="username" id="username" placeholder="Username" className="w-full px-3 py-2 border rounded-md border-neutral-700 bg-neutral-900 text-neutral-100" />
 							</div>
 							<div>
 								<div className="flex justify-between mb-2">
-									<label for="password" className="text-sm">Password</label>
+									<label htmlFor="password" className="text-sm">Password</label>
 								</div>
 								<input type={"password"} onChange={(e)=>setFormData({...formData, password: e.target.value})} name="password" id="password" placeholder="**********" className="w-full px-3 py-2 border rounded-md border-neutral-700 bg-neutral-900 text-neutral-100" />
 							</div>
